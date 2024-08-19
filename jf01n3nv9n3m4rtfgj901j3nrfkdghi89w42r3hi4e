@@ -16508,6 +16508,24 @@ loadstring(game:HttpGet("https://pastefy.app/Ty7G6BXs/raw"))()
 
 end)
 
+ScriptHubSection:NewButton("YBA Item Farm", "YBA Item Farm", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Vuffi2007/YBA-Teleport-to-Items-GUI/main/YBA-Teleport-to-Items-GUI.lua"))()
+
+end)
+
+ScriptHubSection:NewButton("YBA modded Item Farm", "Yba modded Item Farm", function()
+
+loadstring(game:HttpGet("https://pastebin.com/raw/MpsZKLta))()
+
+end)
+
+ScriptHubSection:NewButton("YBA exploit", "Yba exploit", function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Tobias020108Back/YBA-AUT/main/YBA-GUI-Rewrite.lua"))()
+
+end)
+
 ScriptHubSection:NewButton("Example", "Example", function()
 
 end)
